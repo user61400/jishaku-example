@@ -1,15 +1,16 @@
-from discord.ext import commands
+# stdlib
 import os
-from os import system
-import jishaku
+
+# discord.py
+from discord.ext import commands
 
 client = commands.Bot(command_prefix="!")
 
 @client.event
 async def on_ready():
-    client.load_extension("jishaku")
-    system("cls")
-    system("title Jishaku")
+    await client.load_extension("jishaku")
+    os.system("cls")
+    os.system("title Jishaku")
     print("Jishaku succesfully loaded!")
 
 client.run("token here")
